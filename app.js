@@ -41,3 +41,17 @@ function mostrarLista() {
         listaHTML.innerHTML += `<li>${listaAmigos[i]}</li>`;
     }
 }
+
+
+//Ahora, crearemos una fucnión que seleccione un nombre al azar d enuestra lista y limpie todo para poder volver a usar la página.
+function sortearAmigo(){
+    if (listaAmigos.length === 0){
+        alert ("Se necesita tener al menos un nombre para poder jugar")
+    }else{
+        indice = Math.floor(Math.random()*(listaAmigos.length));
+        amigoSorteado = listaAmigos[indice];
+        document.getElementById("resultado").innerHTML = `<li>${amigoSorteado}</li>`;
+
+
+    }
+}
