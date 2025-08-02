@@ -1,7 +1,6 @@
 // Primero creamos una lista vacía para guardar los nombres
 let listaAmigos = [];
 
-
 /*El siguiente paso es crear la función para añadir amigos a la lista.
 Primero debe capturar el texto del input.
 después debe validar que el texto no sea vacío.
@@ -16,7 +15,7 @@ function agregar_amigo(){
     // Si el nombre es válido, lo agregamos a la lista.    
     } else{
         listaAmigos.push(nombreAmigo);
-        alert(nombreAmigo);
+        mostrarLista();
     }
     limpiarCaja();
     console.log(listaAmigos);
@@ -27,4 +26,18 @@ function agregar_amigo(){
 function limpiarCaja(){
     let valorCaja = document.getElementById("amigo");
     valorCaja.value = "";
+}
+
+function mostrarLista() {
+    // 1. Seleccionamos la lista del HTML
+    let listaHTML = document.getElementById("listaAmigos");
+
+    // 2. Limpiamos su contenido
+    listaHTML.innerHTML = "";
+
+    // 3. Recorremos la lista de amigos
+    for (let i = 0; i < listaAmigos.length; i++) {
+        // 4. Por cada amigo, agregamos un <li>
+        listaHTML.innerHTML += `<li>${listaAmigos[i]}</li>`;
+    }
 }
